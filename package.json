@@ -1,0 +1,74 @@
+{
+  "name": "electron-p5-printers",
+  "version": "1.0.0",
+  "description": "p5.js sketch printing on a line printer and a thermal printer, in a fullscreen Electron app",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "start:simulate": "electron . --simulate",
+    "dev:simulate": "electron . --dev --simulate",
+    "list-printers": "node scripts/list-printers.js",
+    "pack": "electron-builder --dir",
+    "build": "electron-builder",
+    "build:mac": "electron-builder --mac --universal",
+    "build:win": "electron-builder --win --x64",
+    "build:linux": "electron-builder --linux --x64",
+    "build:pi": "electron-builder --linux --arm64",
+    "build:all": "electron-builder --mac --universal --win --x64 --linux --x64"
+  },
+  "author": "ZHdK Critical Coding",
+  "build": {
+    "appId": "ch.zhdk.criticalcoding.electronp5printers",
+    "productName": "Electron P5 Printers",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "printers/**/*",
+      "sketch/**/*",
+      "package.json"
+    ],
+    "npmRebuild": false,
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "category": "public.app-category.graphics-design",
+      "identity": null
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "portable": {
+      "artifactName": "${productName}-${version}-portable.${ext}"
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ],
+      "category": "Graphics"
+    },
+    "publish": null
+  },
+  "devDependencies": {
+    "electron": "^44.4.1",
+    "electron-builder": "^26.15.3"
+  },
+  "dependencies": {
+    "iconv-lite": "^0.7.3",
+    "usb": "^2.18.0"
+  }
+}

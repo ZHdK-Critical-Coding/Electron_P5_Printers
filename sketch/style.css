@@ -1,0 +1,51 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, sans-serif;
+}
+
+canvas {
+  display: block;
+}
+
+.panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 340px;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #1c1c1c;
+  color: #fff;
+}
+
+.panel h2 {
+  margin: 16px 0 0;
+  font-size: 16px;
+}
+
+.panel textarea {
+  height: 120px;
+  font: inherit;
+}
+
+.panel button,
+.panel select,
+.panel input {
+  font: inherit;
+  padding: 6px 8px;
+}
+
+.panel .row {
+  display: flex;
+  gap: 8px;
+}
+
+.panel .row input {
+  flex: 1;
+  min-width: 0;
+}

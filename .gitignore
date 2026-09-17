@@ -1,0 +1,7 @@
+node_modules
+.claude
+.DS_Store
+.ds_store
+.DS_STORE
+dist
+simulated-output
