@@ -33,30 +33,11 @@ nothing else has to be installed.
    ```sh
    npm run list-printers
    ```
-3. Start the develop mode:
-   ```sh
-   npm run dev
-   ```
-
-The example sketch shows the connection status of both printers, a graphic
-to print (click it to change the letter) and a panel with buttons for all
-modes.
 
 Dependencies (`package.json`): Electron 44, electron-builder 26, `usb`
 (libusb access), `iconv-lite` (text encoding). Libraries in
 `sketch/libraries/`: p5.js 1.10.0, p5.sound 1.0.1 (included, not used),
 `printers.js` (printer functions for the sketch).
-
-### Without a Printer: Simulation
-
-```sh
-npm run dev:simulate
-```
-
-Every job is saved to `simulated-output/` instead of being printed: the raw
-printer bytes (`.bin`) and, for images, a `.png` showing exactly the dots
-the printer would print. A built app started with `--simulate` saves the
-jobs to `Documents/simulated-output/`.
 
 ### Printer Connection
 
@@ -84,6 +65,29 @@ printers connected, enter the ids shown by `npm run list-printers`.
 - **Windows:** USB printers belong to the Windows printer driver, which the
   app cannot use. Install the WinUSB driver for the printer with
   [Zadig](https://zadig.akeo.ie/).
+
+## How to Run
+
+Start the develop mode:
+
+```sh
+npm run dev
+```
+
+The example sketch shows the connection status of both printers, a graphic
+to print (click it to change the letter) and a panel with buttons for all
+modes.
+
+### Without a Printer: Simulation
+
+```sh
+npm run dev:simulate
+```
+
+Every job is saved to `simulated-output/` instead of being printed: the raw
+printer bytes (`.bin`) and, for images, a `.png` showing exactly the dots
+the printer would print. A built app started with `--simulate` saves the
+jobs to `Documents/simulated-output/`.
 
 ### Keys, Develop and Build
 

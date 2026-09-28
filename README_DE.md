@@ -33,31 +33,11 @@ muss nichts zusätzlich installiert werden.
    ```sh
    npm run list-printers
    ```
-3. Entwicklungsmodus starten:
-   ```sh
-   npm run dev
-   ```
-
-Der Beispiel-Sketch zeigt den Verbindungsstatus beider Drucker, eine Grafik
-zum Drucken (Klick darauf wechselt den Buchstaben) und ein Panel mit Knöpfen
-für alle Modi.
 
 Abhängigkeiten (`package.json`): Electron 44, electron-builder 26, `usb`
 (USB-Zugriff über libusb), `iconv-lite` (Textkodierung). Bibliotheken in
 `sketch/libraries/`: p5.js 1.10.0, p5.sound 1.0.1 (eingebunden, nicht
 verwendet), `printers.js` (Druckerfunktionen für den Sketch).
-
-### Ohne Drucker: Simulation
-
-```sh
-npm run dev:simulate
-```
-
-Jeder Auftrag wird in `simulated-output/` gespeichert statt gedruckt: die
-Druckerdaten (`.bin`) und bei Bildern ein `.png`, das genau die Punkte
-zeigt, die der Drucker drucken würde. Eine gebaute App, die mit
-`--simulate` gestartet wird, speichert die Aufträge in
-`Dokumente/simulated-output/`.
 
 ### Druckerverbindung
 
@@ -87,6 +67,30 @@ anderen Drucker. Sind mehr Drucker angeschlossen, die IDs aus
 - **Windows:** USB-Drucker gehören dem Windows-Druckertreiber, den die App
   nicht verwenden kann. Mit [Zadig](https://zadig.akeo.ie/) den
   WinUSB-Treiber für den Drucker installieren.
+
+## Ausführen
+
+Entwicklungsmodus starten:
+
+```sh
+npm run dev
+```
+
+Der Beispiel-Sketch zeigt den Verbindungsstatus beider Drucker, eine Grafik
+zum Drucken (Klick darauf wechselt den Buchstaben) und ein Panel mit Knöpfen
+für alle Modi.
+
+### Ohne Drucker: Simulation
+
+```sh
+npm run dev:simulate
+```
+
+Jeder Auftrag wird in `simulated-output/` gespeichert statt gedruckt: die
+Druckerdaten (`.bin`) und bei Bildern ein `.png`, das genau die Punkte
+zeigt, die der Drucker drucken würde. Eine gebaute App, die mit
+`--simulate` gestartet wird, speichert die Aufträge in
+`Dokumente/simulated-output/`.
 
 ### Tasten, Entwickeln und Bauen
 
